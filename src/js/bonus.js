@@ -2,22 +2,26 @@ import {it, expect} from "./test_lib";
 
 // Constructors
 // Only add code to *THIS* section!
-function Coffee(){
-  this.full = true;
-
+function Coffee(name){
+  this.name = name;
+  this.sipsLeft = 3;
+  this.full = (this.sipsLeft > 2) ? true : false;
 };
 
-function Human(){
+function Human(name){
+  this.name = name;
+  this.coffee = {};
   this.buy = function(coffee){
-    coffee.full = true;
+    this.coffee = coffee;
+    this.hasCoffee = true;
   };
   this.alertness = 0;
-  this.hasCoffee = false;
-  this.needsCoffee =
+  this.hasCoffee = (this.coffee.sipsLeft !== undefined && this.coffee.sipsLeft > 0) ? true : false;
+  this.needsCoffee = true;
   this.drink = function () {
-    this.alertness += 0.31;
-    (this.alertness > 0.9) ? this.hasCoffee = false : true;
-  }
+    (this.hasCoffee== true) ? (this.coffee.sipsLeft = (this.coffee.sipsLeft - 1), (this.alertness = this.alertness + 0.31), this.coffee.full = false) : this.alertness=this.alertness;
+    this.coffee.empty = (this.coffee.sipsLeft > 0) ? false : true;
+  };
 };
 
 export {Coffee, Human};
