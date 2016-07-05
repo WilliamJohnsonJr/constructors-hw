@@ -1,6 +1,6 @@
 import {it, expect} from "./test_lib";
 import {Dog} from "./constructors/dog";
-import {Person} from "./constructors/person";
+import {Human} from "./constructors/person";
 // Uncomment the line below for Hard Mode and define
 // Human and Coffee objects to complete the Hard mode.
 // Only do this *after* Normal Mode is finished!
