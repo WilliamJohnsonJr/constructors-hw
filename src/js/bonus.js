@@ -2,12 +2,25 @@ import {it, expect} from "./test_lib";
 
 // Constructors
 // Only add code to *THIS* section!
+function Coffee(){
+  this.full = true;
 
-///
-///
-///
-///
+};
 
+function Human(){
+  this.buy = function(coffee){
+    coffee.full = true;
+  };
+  this.alertness = 0;
+  this.hasCoffee = false;
+  this.needsCoffee =
+  this.drink = function () {
+    this.alertness += 0.31;
+    (this.alertness > 0.9) ? this.hasCoffee = false : true;
+  }
+};
+
+export {Coffee, Human};
 // Do not ADD or MODIFY code below this line :D
 
 it("should be sleepy at first", function () {
